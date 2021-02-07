@@ -5,26 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cooking Monster</title>
+    <title>Cooking Master</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-    <div class="container">
+    <div class="container background">
+
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Cooking Monster</a>
+                  <a class="navbar-brand logo-item" href="./index.html">Cooking Master</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
-                  <div class="collapse navbar-collapse" id="navbarNav">
+                  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="./index.html">Home</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
@@ -40,51 +40,37 @@
                 </div>
               </nav>
         </header>
+
         <main>
             <section id="searchBar" class="searchBar">
-                <div class="input-group my-5">
-                    <input type="text" class="form-control" id="searchInput" placeholder="Search fo Meals..."
-                        aria-label="Input group example" aria-describedby="btnGroupAddon">
-                    <button class="input-group-text" id="searchBtn">Search</button>
+                <div>
+                    <div class="input-group my-5">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search fo Meals..." aria-describedby="btnGroupAddon">
+                        <button class="input-group-text btn-danger" id="searchBtn">Search</button>
+                    </div>
                 </div>
             </section>
 
             <section id="errorMsg"  style="display: none;">
-                <p> Sorry! No recipe found by that keyword!!! Try again!</p>
+                <p> Sorry! No meals found by the keyword! Please try again!</p>
             </section>
 
             <section id="foodCart">
             </section>
 
             <section id="detailRecipe" style="display: none;">
-                <div class="card" style="width: 25rem;">
+                <div class="card mb-5" style="width: 25rem;">
                     <img src="" class="card-img-top"
                         alt="image" id="recipeImg">
                     <div class="card-body">
                         <h1 id="recipeName"></h1>
-                        <h4>Ingredients</h4>
+                        <h5 class="my-3">Ingredients</h5>
                         <ul id="ingredientsList"></ul>
                         <button type="button" class="btn btn-danger" id="backBtn" onclick="back()">Back</button>
                     </div>
                 </div>
             </section>
-
         </main>
-        <footer>
-
-        </footer>
-
-
-
-
-
-
-
-
-
-
-
-
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"

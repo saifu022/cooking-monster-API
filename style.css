@@ -1,5 +1,14 @@
-#detailRecipe, #foodCart, #errorMsg {
+body{
+    background-color: #ebf750;
+}
+.navbar-brand{
+    font-weight: bold;
+}
+#detailRecipe, #foodCart, #errorMsg{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+#searchBar{
+    margin: 0 25%;
 }

@@ -41,8 +41,6 @@ function showIngredients() {
         for (let i = 0; i < cards.length; i++) {
             const card = cards[i];
             card.addEventListener('click', (event) => {
-                document.getElementById('foodCart').style.display = 'none';
-                document.getElementById('detailRecipe').style.display = 'flex';
                 const recipeID = event.target.parentElement.parentElement.id;
                 const link = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeID}`;
                 fetch(link)
@@ -53,6 +51,7 @@ function showIngredients() {
                         document.getElementById('recipeName').innerText = desiredRecipe.strMeal;
                         document.getElementById('recipeImg').src = desiredRecipe.strMealThumb;
                         const ingredientsList = document.getElementById('ingredientsList');
+                        //clearing previous ingredients (if any)
                         ingredientsList.innerHTML = "";
                         for (let i = 1; i <= 20; i++) {
                             const keyName = `strIngredient${i}`;
@@ -66,20 +65,24 @@ function showIngredients() {
                             }
                         }
                     })
+                document.getElementById('foodCart').style.display = 'none';
+                document.getElementById('detailRecipe').style.display = 'flex';
             })
         }
-    }, 950);
+    }, 650);
 }
 
 function back(){
     document.getElementById('foodCart').style.display = 'flex';
     document.getElementById('detailRecipe').style.display = 'none';
 }
+//event: search button press
 document.getElementById('searchBtn').addEventListener('click', () => {
     searchNew();
     showIngredients();
 
 })
+//event: search input change
 document.getElementById('searchInput').addEventListener('change', () => {
     searchNew();
     showIngredients();
