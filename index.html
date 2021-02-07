@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Monster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav></nav>
+        </header>
+        <main>
+            <section id="searchBar" class="searchBar">
+                <div class="input-group my-5">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Search fo Meals..."
+                        aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    <button class="input-group-text" id="searchBtn">Search</button>
+                </div>
+            </section>
+
+            <section id="errorMsg"  style="display: none;">
+                <p> Sorry! No recipe found by that keyword!!! Try again!</p>
+            </section>
+
+            <section id="foodCart">
+            </section>
+
+            <section id="detailRecipe" style="display: none;">
+                <div class="card" style="width: 25rem;">
+                    <img src="" class="card-img-top"
+                        alt="..." id="recipeImg">
+                    <div class="card-body">
+                        <h1 id="recipeName"></h1>
+                        <h4>Ingredients</h4>
+                        <ul id="ingredientsList">
+                            
+                        </ul>
+                        <button type="button" class="btn btn-danger" id="backBtn" onclick="back()">Back</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <footer>
+
+        </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
