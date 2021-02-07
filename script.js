@@ -8,31 +8,32 @@ function getRecipes() {
             const recipes = data.meals;
             if (recipes == null){
                 document.getElementById('errorMsg').style.display = 'flex';
+            } else{
+                recipes.forEach(recipe => {
+                    const recipeName = recipe.strMeal;
+                    const recipeImgLink = recipe.strMealThumb;
+                    const newCard = document.createElement('div');
+                    newCard.className = 'recipeCard';
+                    newCard.id = recipe.idMeal;
+                    newCard.innerHTML = `<div class="card rounded m-3" style="width: 18rem;">
+                    <img src=${recipeImgLink} class="card-img-top" alt="Food  image">
+                    <h5 class="card-body card-title text-center"> ${recipeName} </h5>
+                    </div>`
+                    foodCart.appendChild(newCard)
+                });
             }
-            recipes.forEach(recipe => {
-                const recipeName = recipe.strMeal;
-                const recipeImgLink = recipe.strMealThumb;
-                const newCard = document.createElement('div');
-                newCard.className = 'recipeCard';
-                newCard.id = recipe.idMeal;
-                newCard.innerHTML = `<div class="card rounded m-3" style="width: 18rem;">
-                <img src=${recipeImgLink} class="card-img-top" alt="Food  image">
-                <h5 class="card-body card-title text-center"> ${recipeName} </h5>
-                </div>`
-                foodCart.appendChild(newCard)
-            });
-
         })
-
 }
+
 function searchNew() {
-    //clearing the previous search (if any)
     document.getElementById('errorMsg').style.display = 'none';
-    document.getElementById('foodCart').style.display = 'flex';
     document.getElementById('detailRecipe').style.display = 'none';
+    document.getElementById('foodCart').style.display = 'flex';
+    //clearing the previous search (if any)
     document.getElementById('foodCart').innerHTML = "";
     getRecipes();
 }
+
 function showIngredients() {
     //set Time out to wait till the data is loaded from api
     setTimeout(() => {
@@ -65,11 +66,10 @@ function showIngredients() {
                                 ingredientsList.appendChild(newIngredient);
                             }
                         }
-
                     })
             })
         }
-    }, 900);
+    }, 950);
 }
 
 function back(){
