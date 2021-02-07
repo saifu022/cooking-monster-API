@@ -49,7 +49,6 @@ function showIngredients() {
                     .then(res => res.json())
                     .then(data => {
                         const desiredRecipe = data.meals[0];
-                        // console.log(desiredRecipe)
                         const maxIngredientNumber = 20;
                         document.getElementById('recipeName').innerText = desiredRecipe.strMeal;
                         document.getElementById('recipeImg').src = desiredRecipe.strMealThumb;
@@ -85,6 +84,3 @@ document.getElementById('searchInput').addEventListener('change', () => {
     searchNew();
     showIngredients();
 })
-
-
-
